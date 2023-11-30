@@ -58,8 +58,6 @@ void ReceiveWindow::receiveDrawing()
         int y = binaryToInteger(yBinary);
 
         //Check if the next coordinate is far away from the previous coordinate so they arent connected by a line
-        //This doesn't work great, if the mouse is moved too fast some data will be missed and if the coordinate clicked
-        //is close to the previous coordinate but is not connected it will connect them anyway
         if ((x - prevX > 60) || (x - prevX < -60) || (y - prevY > 60) || (y - prevY < -60)){
             prevX = x;
             prevY = y;
